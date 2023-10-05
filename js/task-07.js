@@ -1,8 +1,10 @@
 const inputRangeElement = document.querySelector("#font-size-control");
+const spanText = document.querySelector("#text");
 
 const updateFontSize = () => {
-    const currentFontSize = inputRangeElement.value + "px";
-    document.querySelector("#text").style.fontSize = currentFontSize;
+    spanText.style.fontSize = inputRangeElement.value + "px";
 };
+
+updateFontSize(); // to get the appropriate initial font size
 
 inputRangeElement.addEventListener("input", updateFontSize);
