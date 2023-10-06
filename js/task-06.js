@@ -4,7 +4,7 @@ const checkInputLength = () => {
     const dataLength = Number(inputElement.attributes.getNamedItem("data-length").value);
     const inputLength = inputElement.value.length;
     
-    if (inputLength < dataLength) {
+    if (inputLength !== dataLength) {
         inputElement.classList.remove("valid");
         inputElement.classList.add("invalid");
     } else {
