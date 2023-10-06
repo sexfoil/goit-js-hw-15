@@ -24,11 +24,13 @@ function destroyBoxes() {
   document.querySelector("#boxes").innerHTML = "";
 };
 
+const refs = {
+  createButton: document.querySelector("button[data-create]"),
+  destroyButton: document.querySelector("button[data-destroy]")
+};
 
-const createButtonElement = document.querySelector("button[data-create]");
-const destroyButtonElement = document.querySelector("button[data-destroy]");
 
-const createElements = () => {
+const onClickCreate = () => {
   if (document.querySelector("#boxes").childElementCount === 0) {
     const amount = document.querySelector("#controls").firstElementChild.value;
     if (amount.length !== 0) {
@@ -37,8 +39,8 @@ const createElements = () => {
   }  
 };
 
-const destroyElements = () => destroyBoxes();
+const onClikDestroy = () => destroyBoxes();
 
 
-createButtonElement.addEventListener("click", createElements);
-destroyButtonElement.addEventListener("click", destroyElements);
+refs.createButton.addEventListener("click", onClickCreate);
+refs.destroyButton.addEventListener("click", onClikDestroy);
